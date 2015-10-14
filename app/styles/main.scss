@@ -1,0 +1,523 @@
+// bower:scss
+@import "../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+@import "font";
+@import "var";
+@import "widgets";
+@import "style";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+button[type=button]{
+  outline:none;
+}
+html, body {
+  height: 100%;
+  font-size: 10px;
+}
+
+.panel {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.panel-body {
+  padding: 0;
+  height: 100%;
+}
+
+/*功能区和时间轴样式*/
+.panel-heading {
+  position: fixed;
+  background-color: #DCDCDC;
+  height: 60px;
+  width: 100%;
+  z-index: 999;
+}
+
+/*功能区*/
+.panel-heading ul {
+  list-style: none;
+  margin: 0;
+  line-height: 2em;
+}
+
+.panel-heading > ul > li button {
+  padding: 0;
+  width: 46px;
+  font-size:1.5em;
+  line-height: 1.3em;
+}
+
+.panel-heading ul li span {
+  display: block;
+  text-align: center;
+  width: 46px;
+  font-size:1em;
+  line-height: 1em;
+}
+
+/*时间轴*/
+.panel-heading .l_header_play {
+  display: inline-block;
+  margin: 10px 0 0 0;
+}
+
+.l_header_timeline {
+  position: relative;
+  top: 15px;
+}
+
+.l_header_timeline .line {
+  position: relative;
+  height: 3px;
+  width: 90%;
+  background-color: #b0b0b0;
+  .time{
+    @include jian();
+  }
+}
+
+.l_header_timeline .day_list span {
+  position: relative;
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.radar-bar{
+  position: relative;
+  height: 4px !important;
+  top: -2px !important;
+  background-color: #fff !important;
+}
+
+.l_header_timeline .day_list span:first-child:before {
+  display: none;
+}
+
+/*时间轴修改的bootstrap*/
+.panel-heading .l_header_ctrl button {
+  border: 1px solid #717171;
+  background: #717171;
+  color: #ffffff;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+/*目录区_图层*/
+.panel .l_nav {
+  position: fixed;
+  top: 60px;
+  height: 100%;
+  width: 220px;
+  float: left;
+  background-color: #535353;
+  text-align: center;
+}
+
+.l_nav_info {
+  position: relative;
+  font-size: 14px;
+  height: 42px;
+  line-height: 42px;
+  color: #D2D2D2;
+  border-bottom: 2px solid #666666;
+}
+
+.l_nav_ctrl {
+  padding: 18px 0;
+  background-color: #D2D2D2;
+}
+
+.l_nav > input {
+  clear: both;
+  padding-top: $input-padding-top-height;
+  display: none;
+}
+
+.l_nav > label {
+  display: inline-block;
+  padding: 3px 13px;
+  margin: 18px 0;
+  border: 1px solid #fff;
+  background-color: #fff;
+  position: relative;
+}
+
+.l_nav > label:hover {
+  cursor: pointer;
+}
+
+.l_nav > input:checked + label {
+  border: 1px solid #717171;
+  background-color: #717171;
+  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.l_nav > .l_nav_ctrl_1 {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.l_nav > .l_nav_ctrl_2 {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.l_nav .l_nav_bg {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #D2D2D2;
+}
+
+#l_nav_ctrl_forecast:checked ~ .l_nav_forecast,
+#l_nav_ctrl_address:checked ~ .l_nav_address {
+  display: block;
+}
+
+.l_nav_forecast,
+.l_nav_address {
+  /*float: left;*/
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.l_nav_forecast .dropdown > .btn-default.dropdown-toggle.l_nav_button {
+  position: relative;
+  text-align: left;
+  width: 194px;
+  height: 42px;
+  line-height: 42px;
+  margin-left: 26px;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #666;
+  color: #D2D2D2;
+  background-color: transparent;
+  white-space: normal;
+}
+
+.l_nav_forecast .dropdown .l_nav_arrow,
+.l_nav_address .favorite_city_list .l_nav_arrow {
+  display: inline-block;
+  float: right;
+  margin-right: 19px;
+  line-height: 42px;
+}
+
+.l_nav_forecast .dropdown .dropdown-menu {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background-color: transparent;
+  color: #D2D2D2;
+  box-shadow: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.l_nav_forecast .dropdown .dropdown-menu .radio {
+  margin: 0;
+}
+
+.l_nav_forecast .dropdown .dropdown-menu .form .first {
+  position: relative;
+  height: 42px;
+}
+
+.l_nav_forecast .dropdown .dropdown-menu .form .second {
+  position: relative;
+  height: 70px;
+}
+
+.l_nav_forecast .dropdown .dropdown-menu .form .first:after,
+.l_nav_forecast .dropdown .dropdown-menu .form .second:after {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.l_nav_forecast .dropdown .dropdown-menu .radio label,
+.l_nav_forecast .dropdown .dropdown-menu .radio > div {
+  width: 216px;
+  padding-left: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 20px;
+}
+
+.l_nav_forecast .dropdown .dropdown-menu .radio span {
+  //修正因使用字体图标而带来的字体问题
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.l_nav_forecast .dropdown .dropdown-menu .radio input[type="radio"] {
+  position: relative;
+  float: right;
+  margin: 3px 15px 0 0;
+  vertical-align: middle;
+}
+
+.l_nav_forecast .dropdown .dropdown-menu .radio.second_item {
+  padding-left: 40px;
+}
+
+/*目录区_地址*/
+.l_nav_address .searchform .search {
+  position: relative;
+  left: 8px;
+  width: 200px;
+  height: 25px;
+  border: 1px solid #717171;
+  border-radius: 5px;
+  margin-top: 5px;
+  text-indent: 10px;
+}
+
+.l_nav_address .searchform:after {
+  content: '\e003';
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  left: -20px;
+  font-family: 'Glyphicons Halflings';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  -moz-osx-font-smoothing: grayscale;
+  color: #AAAAAA;
+}
+
+.l_nav_address .city_list,
+.l_nav_address .favorite_city_items {
+  list-style: none;
+  margin: 0;
+}
+
+.l_nav_address .city_list .city,
+.l_nav_address .favorite_city_items .favorite_city {
+  position: relative;
+  height: 35px;
+  line-height: 35px;
+  text-align: right;
+  margin-left: 20px;
+  border-bottom: 1px solid #444;
+  color: #fff;
+}
+
+.l_nav_address .city_list .city:last-child {
+  border-color: #333;
+  margin-left: 0;
+  padding-left: 20px;
+}
+
+.l_nav_address .city_list .city span,
+.l_nav_address .favorite_city span {
+  float: left;
+}
+
+.l_nav_address .city_list .city button,
+.l_nav_address .favorite_city button {
+  border: 2px solid #dddddd;
+  border-radius: 50%;
+  padding: 2px;
+  margin-right: 15px;
+}
+
+.l_nav_address .favorite_city_list {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  height: 42px;
+  line-height: 42px;
+  padding-left: 20px;
+  border: 0;
+  border-bottom: 1px solid #333;
+  color: #fff;
+  background-color: transparent;
+}
+
+/*地图区*/
+.panel .l_body {
+  position: relative;
+  margin-left: 220px;
+  height: 100%;
+  #mapContainer {
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: opacity .6s;
+  }
+  .colorBoard {
+    z-index: 9999;
+    display: inline-block;
+    position: fixed;
+    bottom: 10px;
+    right: 40px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  #infoPanel{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 298px;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 9999;
+    #rainChart{
+      position: relative;
+      width: 20%;
+      height: 222px;
+      //background-color: #112233;
+    }
+    #rainInfo{
+      position: relative;
+      left: 33px;
+      //background-color: #771199;
+      li{
+        list-style: none;
+      }
+    }
+  }
+  .spin {
+    line-height: 0.8em;
+  }
+  .spin > span {
+    position: absolute;
+    top: 17px;
+    left: 5px;
+    z-index: 999;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    content: '';
+  }
+  .spin > img {
+    transform: scale(1.2);
+  }
+}
+
+.l_address {
+  position: absolute;
+  height: 650px; //和地图同高
+  width: 220px;
+  left: 0;
+  text-align: center;
+  z-index: 999;
+  .closeMenu > .addressList {
+    display: none;
+  }
+  .addressBox {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    //background-color: #666666;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 144px;
+      height: 1px;
+      background-color: #D1D1D1;
+    }
+    .addressDropdown {
+      border: 0;
+      width: 100%;
+      height: 30px;
+      background-color: #ffffff;
+    }
+    .addressList {
+      position: relative;
+      width: 100%;
+      //todo bug
+      height: 400px;
+      //overflow-y: scroll;
+      //background-color: #123456;
+
+      li {
+        list-style: none;
+        padding: 5px 12px 0 12px;
+        text-align: left;
+        &:hover {
+          background-color: #cae1ff;
+        }
+        .addressName {
+          color:#fff;
+          display: inline-block;
+          width: 155px;
+          line-height: 20px;
+          cursor: pointer;
+          overflow: hidden; /*不允许出现滚动条*/
+          text-overflow: ellipsis; /*使用省略号来代表被修剪的文本*/
+          -o-text-overflow: ellipsis; /*为了兼容老版本的Opera浏览器*/
+          white-space: nowrap; /*文本不换行*/
+        }
+        .icon-mlogfont-delete {
+          line-height: 20px;
+          float: right;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+#inputCityName {
+  position: relative;
+  //left: 11px;
+  width: 100%;
+  height: 30px;
+  border: 1px solid #717171;
+  border-radius: 5px;
+  margin-top: 12px;
+  text-indent: 10px;
+  outline: none;
+}
+.blue-back{
+  background-color: rgb(62,93,124);
+}
+#result1 div {
+  cursor: pointer;
+  padding: 5px 12px 0 12px;
+  text-align: left;
+  color:#fff;
+  &:hover {
+    background-color: #cae1ff;
+  }
+  .addressDesc {
+    display: inline-block;
+    width: 155px;
+    line-height: 20px;
+    overflow: hidden; /*不允许出现滚动条*/
+    text-overflow: ellipsis; /*使用省略号来代表被修剪的文本*/
+    -o-text-overflow: ellipsis; /*为了兼容老版本的Opera浏览器*/
+    white-space: nowrap; /*文本不换行*/
+  }
+  .icon-mlogfont-add {
+    line-height: 20px;
+    float: right;
+    cursor: pointer;
+  }
+}

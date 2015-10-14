@@ -1,0 +1,91 @@
+
+$icon-font-path: '../fonts/';
+
+
+@font-face {
+  font-family: 'mlogfont';
+  src: url('../fonts/icomoon.eot?blzqaq');
+  src: url('../fonts/icomoon.eot?#iefixblzqaq') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?blzqaq') format('truetype'),
+  url('../fonts/icomoon.woff?blzqaq') format('woff'),
+  url('../fonts/icomoon.svg?blzqaq#icomoon') format('svg');
+}
+.mlogicon{
+  font-family: 'mlogfont';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+.icon-mlogfont-add:before {
+  content: "\e600";
+}
+.icon-mlogfont-aqi:before {
+  content: "\e601";
+}
+//todo click event toggle
+.icon-mlogfont-arrowright:before {
+  content: "\e602";
+}
+.icon-mlogfont-arrowdown:before {
+  content: "\e603";
+}
+.icon-mlogfont-china:before {
+  content: "\e604";
+}
+.icon-mlogfont-close:before {
+  content: "\e605";
+}
+.icon-mlogfont-cloud:before {
+  content: "\e606";
+}
+.icon-mlogfont-color:before {
+  content: "\e607";
+}
+.icon-mlogfont-delete:before {
+  content: "\e608";
+}
+.icon-mlogfont-framelast:before {
+  content: "\e609";
+}
+.icon-mlogfont-framenext:before {
+  content: "\e60a";
+}
+.icon-mlogfont-humidity:before {
+  content: "\e60b";
+}
+.icon-mlogfont-info:before {
+  content: "\e60c";
+}
+.icon-mlogfont-list:before {
+  content: "\e60d";
+}
+.icon-mlogfont-pause:before {
+  content: "\e60e";
+}
+.icon-mlogfont-pin:before {
+  content: "\e60f";
+}
+.icon-mlogfont-play:before {
+  content: "\e610";
+}
+.icon-mlogfont-rain:before {
+  content: "\e611";
+}
+.icon-mlogfont-search:before {
+  content: "\e612";
+}
+.icon-mlogfont-size:before {
+  content: "\e613";
+}
+.icon-mlogfont-temp:before {
+  content: "\e614";
+}
+.icon-mlogfont-wave:before {
+  content: "\e615";
+}
+.icon-mlogfont-wind:before {
+  content: "\e616";
+}
